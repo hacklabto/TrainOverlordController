@@ -22,9 +22,9 @@
 		<option value="q">Query status</option>
 		<option value="Q">Query verbose status</option>
 		<option value="f">Move forward 1 second</option>
-		<option disabled="true" value="F">Move forward until stopped - disabled for scripting</option>
+		<option value="F">Move forward until IR hit</option>
 		<option value="b">Move backward 1 second</option>
-		<option disabled="true" value="B">Move Backwards until stopped - disabled for scripting</option>
+		<option value="B">Move backwards until IR hit</option>
 		<option value="s">Stop</option>
 		<option value="S">Stop ALL (Including winch)</option>
 		<option value="u">Winch up for 1 second</option>
@@ -34,6 +34,11 @@
 		<option value="j">Stop winch</option>
 		<option value="i">Toggle IR marker message ("--MARKER--")</option>
 		<option value="a">Toggle move until IR hit then reverse</option>
+		<option value="l">Run the laser demo</option>
+<!--		<option value="e1">You have failed Vader for the last time</option>
+		<option value="e2">Vader thinks you do not understand the power of the dark side</option>
+		<option value="e3">Vader finds your lack of faith disturbing</option>
+-->
 		<option value="R">Reset</option>
 	</select>
 	<button id="add-command">Add this command</button>

@@ -19,13 +19,13 @@ de("here");
 // wait one second if the command is in this array
 $oneSecondCommands = array('f', 'b', 'u', 'm');
 // wait five seconds if the command is in this array
-$fiveSecondCommands = array('M');
+$fiveSecondCommands = array('M', 'l');
 // return text status
 $returnTextCommands = array('q', 'Q');
 
 
 // open the USB serial port for the Xbee
-$fp = fopen("/dev/ttyUSB2", "w+");
+$fp = fopen("/dev/ttyUSB1", "w+");
 
 //Report an error if failed
 if (!$fp)
@@ -52,20 +52,25 @@ de ("size of array: " . count($command));
 //stream_set_blocking($fp, false);
 
 // now loop through the commands and execute them, then push the returned text into an array
-foreach ($command as $c)
-{
-	// execute the command
-	fwrite($fp, $c);
-	if (in_array($c, $oneSecondCommands)) // wait one second for this command to execute before executing the next one
+//
+//while (true)
+//{
+	foreach ($command as $c)
 	{
-			sleep (1);
-	} else if (in_array($c, $fiveSecondCommands)) // wait five seconds for this command to execute before executing the next one
-	{
-			sleep (5);
+		// execute the command
+		fwrite($fp, $c);
+		if (in_array($c, $oneSecondCommands)) // wait one second for this command to execute before executing the next one
+		{
+				sleep (1);
+		} else if (in_array($c, $fiveSecondCommands)) // wait five seconds for this command to execute before executing the next one
+		{
+				sleep (5);
+		}
+		$retStrings[] = "'" . $c . "': done";
+		
 	}
-	$retStrings[] = "'" . $c . "': done";
-	
-}
+//	reset($command);
+//}
 
 foreach ($retStrings AS $r)
 {
