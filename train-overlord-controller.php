@@ -34,7 +34,10 @@
 		<option value="j">Stop winch</option>
 		<option value="i">Toggle IR marker message ("--MARKER--")</option>
 		<option value="a">Toggle move until IR hit then reverse</option>
-		<option value="l">Run the laser demo</option>
+		<option value="d">Toggle the laser demo</option>
+		<option value="L">Turn laser on</option>
+		<option value="l">Turn laser off</option>
+		<option value="T">Make a really annoying noise</option>
 <!--		<option value="e1">You have failed Vader for the last time</option>
 		<option value="e2">Vader thinks you do not understand the power of the dark side</option>
 		<option value="e3">Vader finds your lack of faith disturbing</option>
